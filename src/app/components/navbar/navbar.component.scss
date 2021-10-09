@@ -1,0 +1,53 @@
+$mainColor: #fff;
+nav {
+  z-index: 2;
+  .container {
+    img {
+      width: 30px;
+      transform: scale3d(1.5, 1.7, 1.5);
+      transition: all 0.5s ease-in-out;
+      &:hover {
+        transform: rotate(-180deg);
+      }
+    }
+    .navbar-brand {
+      font-family: cursive;
+      color: #c996cc;
+      font-size: 24px;
+      font-weight: 800;
+      filter: drop-shadow(1px 1px 10px white);
+    }
+    .collapse {
+      ul {
+        li {
+          a {
+            color: $mainColor;
+          }
+        }
+        .row {
+          .dropdown {
+            button {
+            }
+            .dropdown-links {
+              background: #343a40;
+              a {
+                text-decoration: none;
+                margin-left: 12px;
+                color: $mainColor;
+              }
+              hr {
+                background: $mainColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.link {
+  display: inline-block;
+  a {
+    margin: 30px;
+  }
+}

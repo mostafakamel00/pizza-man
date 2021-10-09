@@ -1,0 +1,75 @@
+.profile {
+  margin-top: -10px;
+  .row {
+    img {
+      border-radius: 10px;
+      filter: drop-shadow(1px 1px 6px #c996cc);
+      transition: all 0.5s ease-in-out;
+      margin-top: 11px;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+i {
+  margin-top: 10px;
+}
+.img {
+  color: #fff;
+  background: url("../../../assets/images/pexels-shvets-anna-2564252.jpg")
+    no-repeat center fixed !important;
+  background-size: cover !important;
+  .overlay {
+    background: rgba(0, 0, 0, 0.8) !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+  }
+}
+.alert {
+  position: fixed;
+  top: 10%;
+  left: 2%;
+}
+.search {
+  margin-top: 72px;
+  input {
+    margin: auto;
+    background: transparent;
+    color: wheat;
+    font-size: 22px;
+    height: 38px;
+    width: 50%;
+    border-radius: 10px;
+    &::placeholder {
+      color: #c996cc;
+      border: none;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+.up {
+  position: fixed;
+  bottom: 20px;
+  right: -40px;
+  color: #85198c;
+  border: 3px solid;
+  border-radius: 10px;
+  padding: 1px 3px;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: scrolltop 0.8s ease-in-out 1s infinite alternate;
+}
+.show {
+  right: 25px;
+}
+@keyframes scrolltop {
+  from {
+    margin-top: 20px;
+  }
+  to {
+    margin-bottom: 0;
+  }
+}

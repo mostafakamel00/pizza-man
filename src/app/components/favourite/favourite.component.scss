@@ -1,0 +1,30 @@
+.overlay {
+  background: #000;
+  min-height: 100vh;
+}
+img {
+  border-radius: 10px;
+  filter: drop-shadow(1px 1px 6px #ccb696);
+}
+i {
+  margin-top: 75px;
+}
+span {
+  color: #343a40;
+  font-size: 23px;
+  font-family: cursive;
+}
+a {
+  max-height: 34px;
+}
+.alert {
+  position: absolute;
+  top: 50%;
+  left: 34%;
+  transform: translate(-50%, -50%);
+  a {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

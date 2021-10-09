@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+  <div class="container">
+    <img
+      src="../../../assets/images/kisspng-pizza-italian-cuisine-chef-clip-art-vector-cartoon-chef-and-pizza-5a8a8a5888be06.3463858215190288245601.png"
+      alt=""
+    />
+    <a class="navbar-brand" href="#">{{ "pizza man" | titlecase }}</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+        <!-- dropdown -->
+        <div class="row">
+          <div class="col">
+            <div
+              *ngIf="!auth.isLoggedIn()"
+              ngbDropdown
+              class="d-inline-block dropdown"
+              [ngStyle]="{
+                border: '2px solid #2a5e5e',
+                'border-radius': '10px'
+              }"
+            >
+              <button
+                class="btn"
+                id="dropdownBasic1"
+                ngbDropdownToggle
+                [ngStyle]="{
+                  color: 'white'
+                }"
+              ></button>
+              <div
+                ngbDropdownMenu
+                aria-labelledby="dropdownBasic1"
+                class="dropdown-links"
+              >
+                <a routerLink="/signup">{{ "signup" | titlecase }}</a>
+                <hr />
+                <a routerLink="/signin">{{ "signin" | titlecase }}</a>
+              </div>
+            </div>
+            <div class="link" *ngIf="auth.isLoggedIn()">
+              <a routerLink="home">Home</a>
+              <a routerLink="fav">Favourite</a>
+            </div>
+            <div
+              *ngIf="auth.isLoggedIn()"
+              ngbDropdown
+              class="d-inline-block dropdown"
+            >
+              <button class="btn btn-danger btn-sm" (click)="logOut()">
+                {{ "logout" | titlecase }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>

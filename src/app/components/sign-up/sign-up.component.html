@@ -1,0 +1,135 @@
+<div id="signUp">
+  <div class="form w-50">
+    <form
+      data-aos="fade-down"
+      data-aos-delay="500"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      [formGroup]="signForm"
+      (ngSubmit)="signForm.valid && formData()"
+    >
+      <div class="container">
+        <!--start row of first and last name-->
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <input
+              [class.is-valid]="signForm.controls.first_name.status === 'VALID'"
+              formControlName="first_name"
+              type="text"
+              class="form-control"
+              placeholder="type your first name"
+            />
+            <div
+              class="alert"
+              *ngIf="
+                signForm.controls.first_name.errors &&
+                signForm.controls.first_name.touched
+              "
+            >
+              {{ "first name is required" | titlecase }}
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <input
+              [class.is-valid]="signForm.controls.last_name.status === 'VALID'"
+              formControlName="last_name"
+              type="text"
+              class="form-control"
+              placeholder="type your last name"
+            />
+            <div
+              class="alert"
+              *ngIf="
+                signForm.controls.last_name.errors &&
+                signForm.controls.last_name.touched
+              "
+            >
+              {{ "last name is required" | titlecase }}
+            </div>
+          </div>
+        </div>
+        <!--end row of first and last name-->
+
+        <!--start email-->
+        <input
+          [class.is-valid]="signForm.controls.email.status === 'VALID'"
+          formControlName="email"
+          type="email"
+          class="form-control my-3"
+          placeholder="type your Email"
+        />
+        <div
+          class="alert"
+          *ngIf="
+            signForm.controls.email.touched && signForm.controls.email.invalid
+          "
+        >
+          {{ "email is required" | titlecase }}
+        </div>
+        <!--end email-->
+
+        <!--start age-->
+        <input
+          [class.is-valid]="signForm.controls.age.status === 'VALID'"
+          formControlName="age"
+          type="text"
+          class="form-control"
+          placeholder="type your age"
+        />
+        <div
+          class="alert"
+          *ngIf="signForm.controls.age.errors && signForm.controls.age.touched"
+        >
+          {{ "age is required" | titlecase }}
+        </div>
+        <!--end age-->
+
+        <!--start password-->
+        <input
+          [class.is-valid]="signForm.controls.password.status === 'VALID'"
+          formControlName="password"
+          type="password"
+          class="form-control my-3"
+          placeholder="type your password"
+        />
+        <div
+          class="alert"
+          *ngIf="
+            signForm.controls.password.invalid &&
+            signForm.controls.password.touched
+          "
+        >
+          {{ "minimum character is 6" | titlecase }}
+        </div>
+        <!--end password-->
+
+        <!--switch signup and waiting-->
+        <button
+          [disabled]="signForm.invalid"
+          [ngStyle]="signForm.invalid ? isBtnNotActive : isBtnActive"
+          class="btn btn-info w-100"
+        >
+          <span *ngIf="!isClicked">Sign Up</span>
+          <span *ngIf="isClicked">Waiting...</span>
+        </button>
+        <!--switch signup and waiting-->
+
+        <!--method go to signin-->
+        <a
+          class="d-flex justify-content-center mt-3 signlink"
+          (click)="goToSignIn()"
+          >I Have Account</a
+        >
+        <!--method go to signin-->
+
+        <!--show the result message and error message -->
+        <div class="alert text-center" *ngIf="resMsgBoolean">
+          {{ resMsg }}
+        </div>
+        <div class="alert text-center" *ngIf="resErrBoolean">
+          {{ resErr }}
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

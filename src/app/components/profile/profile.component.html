@@ -1,0 +1,54 @@
+<div class="img">
+  <div class="overlay">
+    <span class="count">{{ fav.length }}</span>
+    <div class="profile">
+      <div class="container mt-5">
+        <!--start input Search -->
+        <div class="search">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="search"
+            [(ngModel)]="searchName"
+            (input)="search()"
+            autofocus
+          />
+        </div>
+        <!--End input Search -->
+
+        <div class="row">
+          <div
+            class="col-md-4 col-xs-12"
+            *ngFor="let item of pizzaArr; let i = index"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+          >
+            <i
+              class="far fa-heart fa-1x"
+              (click)="addToCart(i); showSuccess()"
+            ></i>
+            <img
+              src="{{ item.image_url }}"
+              alt=""
+              width="100%"
+              height="250px"
+            />
+            <!--Start Details -->
+            <div class="details">
+              <span>{{ item.title }}</span>
+              <a
+                class="btn btn-primary btn-sm"
+                target="_blank"
+                href="{{ item.publisher_url }}"
+                >Details</a
+              >
+            </div>
+            <!--END Details -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <i class="fas fa-chevron-up fa-2x up" (click)="toTop()"></i>
+  </div>
+</div>

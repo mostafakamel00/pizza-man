@@ -1,0 +1,46 @@
+<div id="signIn">
+  <div class="container">
+    <form [formGroup]="signInForm" (ngSubmit)="signInForm.valid && formData()">
+      <div
+        class="form w-50"
+        data-aos="fade-down"
+        data-aos-delay="500"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+      >
+        <input
+          [class.is-valid]="signInForm.controls.email.status === 'VALID'"
+          formControlName="email"
+          type="email"
+          class="form-control my-3"
+          placeholder="type your Email"
+        />
+        <!-- <div class='alert alert-warning'  *ngIf='signInForm.controls.email.valid'>
+          {{"email is required" | titlecase}}
+        </div> -->
+        <input
+          [class.is-valid]="signInForm.controls.password.status === 'VALID'"
+          formControlName="password"
+          type="password"
+          class="form-control my-3"
+          placeholder="type your password"
+        />
+        <button
+          [disabled]="signInForm.invalid"
+          [ngStyle]="signInForm.invalid ? isBtnNotActive : isBtnActive"
+          class="btn btn-info w-100"
+        >
+          {{ "sign in" | titlecase }}
+        </button>
+        <a
+          class="d-flex justify-content-center mt-3 signlink"
+          (click)="goToSignUp()"
+          >Create Account</a
+        >
+        <div class="alert text-center" *ngIf="correctPassBoolean">
+          {{ correctPass }}
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

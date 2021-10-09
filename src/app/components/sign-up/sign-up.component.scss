@@ -1,0 +1,32 @@
+#signUp {
+  min-height: 100vh;
+  background: #343a40;
+  .form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .container {
+      .row {
+        input {
+          padding: 20px 15px;
+          background: transparent;
+          color: wheat;
+          font-size: 18px;
+        }
+      }
+      input {
+        padding: 20px 15px;
+        background: transparent;
+        color: wheat;
+        font-size: 18px;
+      }
+    }
+  }
+}
+.alert {
+  color: #d88787;
+  font-family: cursive;
+  font-size: 18px;
+  font-style: italic;
+}
