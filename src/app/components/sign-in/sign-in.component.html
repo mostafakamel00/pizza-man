@@ -32,11 +32,13 @@
         >
           {{ "sign in" | titlecase }}
         </button>
+
         <a
           class="d-flex justify-content-center mt-3 signlink"
           (click)="goToSignUp()"
           >Create Account</a
         >
+
         <div class="alert text-center" *ngIf="correctPassBoolean">
           {{ correctPass }}
         </div>
