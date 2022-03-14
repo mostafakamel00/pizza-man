@@ -1,8 +1,14 @@
+.img {
+  color: #fff;
+  background: #000;
+  min-height: 100vh;
+}
 .profile {
   margin-top: -10px;
   .row {
     img {
-      border-radius: 10px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
       filter: drop-shadow(1px 1px 6px #c996cc);
       transition: all 0.5s ease-in-out;
       margin-top: 11px;
@@ -15,17 +21,7 @@
 i {
   margin-top: 10px;
 }
-.img {
-  color: #fff;
-  background: url("../../../assets/images/pexels-shvets-anna-2564252.jpg")
-    no-repeat center fixed !important;
-  background-size: cover !important;
-  .overlay {
-    background: rgba(0, 0, 0, 0.8) !important;
-    width: 100% !important;
-    min-height: 100vh !important;
-  }
-}
+
 .alert {
   position: fixed;
   top: 10%;

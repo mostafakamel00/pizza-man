@@ -2,6 +2,7 @@ $mainColor: #fff;
 nav {
   z-index: 2;
   .container {
+    justify-content: unset;
     img {
       width: 30px;
       transform: scale3d(1.5, 1.7, 1.5);
@@ -11,7 +12,6 @@ nav {
       }
     }
     .navbar-brand {
-      font-family: cursive;
       color: #c996cc;
       font-size: 24px;
       font-weight: 800;

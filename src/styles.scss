@@ -14,7 +14,6 @@
   span {
     color: wheat;
     font-size: 20px;
-    font-family: cursive;
     font-style: italic;
   }
   a {
@@ -33,17 +32,4 @@ i {
 .signlink {
   cursor: pointer;
   font-size: 23px;
-}
-
-// count of favourite
-.count {
-  position: fixed;
-  top: 4%;
-  z-index: 3;
-  right: 23%;
-  background: #dc3545;
-  color: white !important;
-  padding: 0 11px;
-  border-radius: 14px;
-  font-size: 14px !important;
 }
